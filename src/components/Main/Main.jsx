@@ -44,7 +44,7 @@ function Main({ selectedCat }) {
   return (
     <main className="main">
       {randomData.map((object, index) => (
-        <Card key={index} object={object} index={index} />
+        <Card key={index} object={object} />
       ))}
     </main>
   );

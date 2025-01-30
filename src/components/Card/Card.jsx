@@ -1,19 +1,31 @@
 import "./Card.scss";
+import { useState } from "react";
 
-function Card({ object, index }) {
+function Card({ object }) {
   const changeSymbols = (str) => {
     const temp = document.createElement("div");
     temp.innerHTML = str;
     return temp.textContent;
   };
 
+  const [flipped, setFlipped] = useState(false);
+
+  const handleFlip = () => {
+    setFlipped((prev) => !prev);
+  };
+
   return (
-    <article className="card">
-      <h2 className="card__question">{changeSymbols(object.question)}</h2>
-      <div>
-        <p className="card__answer">{changeSymbols(object.correct_answer)}</p>
+    <article
+      className={`${flipped ? "card--flipped" : "card"}`}
+      onClick={handleFlip}
+    >
+      <h3 className={`${flipped ? "card__hide" : "card__question"}`}>
+        {changeSymbols(object.question)}
+      </h3>
+        <h2 className={`${flipped ? "card__answer" : "card__hide"}`}>
+          {changeSymbols(object.correct_answer)}
+        </h2>
         <p className="card__cat">{changeSymbols(object.category)}</p>
-      </div>
     </article>
   );
 }
