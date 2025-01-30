@@ -1,10 +1,10 @@
-# Trivia Client Site
+# Trivia
 
-## Gitflow
+## Client Site
 
 - main: for init and final version
 
-- develop
+- develop: for developing
 
 - features:
   - Header
@@ -16,3 +16,8 @@
   - Footer
     - Content
     - Style
+
+## Server Site
+
+- GET /cats
+- GET /data
