@@ -1,5 +1,5 @@
 import "./Main.scss";
-import data from "../../../../data.json";
+import data from "../../../data.json";
 import Card from "../Card/Card";
 
 function Main({ selectedCat }) {
