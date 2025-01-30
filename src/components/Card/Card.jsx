@@ -22,10 +22,12 @@ function Card({ object }) {
       <h3 className={`${flipped ? "card__hide" : "card__question"}`}>
         {changeSymbols(object.question)}
       </h3>
-        <h2 className={`${flipped ? "card__answer" : "card__hide"}`}>
-          {changeSymbols(object.correct_answer)}
-        </h2>
-        <p className="card__cat">{changeSymbols(object.category)}</p>
+      <h2 className={`${flipped ? "card__answer" : "card__hide"}`}>
+        {changeSymbols(object.correct_answer)}
+      </h2>
+      <p className={`${flipped ? "card__cat--flipped" : "card__cat"}`}>
+        {changeSymbols(object.category)}
+      </p>
     </article>
   );
 }

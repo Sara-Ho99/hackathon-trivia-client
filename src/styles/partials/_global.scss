@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap");
+
 *,
 *::before,
 *::after {
@@ -8,7 +10,8 @@
 
 body {
   color: black;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: "Quicksand", Arial, Helvetica, sans-serif;
+  font-weight: 700;
 }
 
 a {

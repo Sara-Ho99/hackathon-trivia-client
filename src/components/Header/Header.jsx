@@ -3,7 +3,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 function Header({ selectedCat, setSelectedCat }) {
-
   const API_URL = import.meta.env.VITE_API_URL;
 
   const [cats, setCats] = useState([]);
@@ -31,7 +30,7 @@ function Header({ selectedCat, setSelectedCat }) {
       <h1 className="header__title">Trivia</h1>
       <div>
         <label className="header__label" htmlFor="category">
-          category
+          Category
         </label>
         <select className="header__select" onChange={handleCategoryChange}>
           <option value="">Select a category...</option>

@@ -26,11 +26,12 @@
   &__question {
     padding: 1rem;
     color: #003b73;
+    font-size: 1.4rem;
   }
   &__answer {
     padding: 1rem;
     font-size: 2rem;
-    color: #bfd7ed;
+    color: white;
     margin: auto;
   }
   &__cat {
@@ -38,6 +39,13 @@
     background-color: #90a1b2;
     border-radius: 0px 0 10px 10px;
     text-align: center;
+  }
+  &__cat--flipped {
+    padding: 0.5rem 1rem;
+    background-color: #60a3d9;
+    border-radius: 0px 0 10px 10px;
+    text-align: center;
+    color: white;
   }
   &__hide {
     display: none;
