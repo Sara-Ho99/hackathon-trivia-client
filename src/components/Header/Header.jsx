@@ -1,22 +1,24 @@
 import "./Header.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import cats from "../../../tags.json";
 
 function Header({ selectedCat, setSelectedCat }) {
-  //   const [cats, setCats] = useState([]);
 
-  //   useEffect(() => {
-  //     const fetchCats = async () => {
-  //       try {
-  //         const { data } = await axios.get(`${API_URL}/cats`);
-  //         setCats(data);
-  //       } catch (error) {
-  //         console.error(error);
-  //       }
-  //     };
-  //     fetchCats();
-  //   }, [API_URL]);
+  const API_URL = import.meta.env.VITE_API_URL;
+
+  const [cats, setCats] = useState([]);
+
+  useEffect(() => {
+    const fetchCats = async () => {
+      try {
+        const { data } = await axios.get(`${API_URL}/cats`);
+        setCats(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchCats();
+  }, [API_URL]);
 
   const handleCategoryChange = (event) => {
     const selectedCategory = event.target.value;

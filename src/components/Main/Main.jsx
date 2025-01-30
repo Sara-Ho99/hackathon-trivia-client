@@ -1,8 +1,27 @@
 import "./Main.scss";
-import data from "../../../data.json";
 import Card from "../Card/Card";
+import data from "../../../data.json";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function Main({ selectedCat }) {
+
+  const API_URL = import.meta.env.VITE_API_URL;
+  
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const { data } = await axios.get(`${API_URL}/data`);
+        setData(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchData();
+  }, [API_URL]);
+  
   const getRandomItems = (array, num, selectedCat) => {
     let filteredArray = [];
     if (selectedCat) {
